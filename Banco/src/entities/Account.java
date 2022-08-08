@@ -6,7 +6,7 @@ public class Account {
 	private double balance;
 	
 	
-	// Constructor
+	// Constructors
 	
 	public Account(int number, String holder) {
 		super();
