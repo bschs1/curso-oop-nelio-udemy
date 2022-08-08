@@ -1,26 +1,70 @@
 package entities;
 
 public class Product {
-	public String name;
-	public double price;
-	public int quantity;
-	
-	public String totalValueInStock() {
-		 double retorninho = quantity * price;
-		 return String.format("%.2f", retorninho);
-	}
-	
-	public void addProducts(int quantity) {
-		this.quantity += quantity; // o this é uma auto referencia para o objeto, o this.quantity estou deixando explicito que quero acessar o ATRIBUTO DA CLASSE e NÃO O PARAMETRO
+
+	// Variaveis
+	private String name;
+	private double price;
+	private int quantity;
+
+	// Constructors
+	public Product() {
 		
 	}
 	
+	public Product(String name, double price, int quantity) {
+		// super(); // se a classe product for sub-classe de algo importante no constructor, ele vai
+					// chamar o construtor da super classe, n esse!
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	public Product(String name, double price) {
+		this.name = name;
+		this.price = price;
+	}
+
+	// Getters e Setters
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	// Quantity precisa ser private pq só podemos alterar a quantidade com entrada e
+	// saida do estoque (regra de negocio)
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	// Methods
+
+	public double totalValueInStock() {
+		return price * quantity;
+	}
+
+	public void addProducts(int quantity) {
+		this.quantity += quantity;
+	}
+
 	public void removeProducts(int quantity) {
 		this.quantity -= quantity;
-		// this.quantity = o da classe, e o quantity = o do parametro
 	}
 
 	public String toString() {
-		return name + ", $" + String.format("%.2f", price) + ", " + quantity + " units, Total: $ " + totalValueInStock();
+		return name + ", $ " + String.format("%.2f", price) + ", " + quantity + " units, Total: $ "
+				+ String.format("%.2f", totalValueInStock());
 	}
 }
