@@ -12,9 +12,9 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
 		
-		Account account;
+		Account account; 
 		
-		System.out.print("Vamos criar sua conta! ");
+		System.out.print("Vamos criar sua conta!  ");
 		System.out.print("Enter account number: ");
 		int number = sc.nextInt();
 		System.out.print("Enter account holder: ");
