@@ -14,7 +14,7 @@ public class Program {
 		
 		Account account; 
 		
-		System.out.print("Vamos criar sua conta!  ");
+		System.out.print("Vamos criar sua conta! ");
 		System.out.print("Enter account number: ");
 		int number = sc.nextInt();
 		System.out.print("Enter account holder: ");
